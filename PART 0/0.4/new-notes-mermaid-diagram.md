@@ -1,7 +1,7 @@
 ```mermaid
 sequenceDiagram
-    participant b as browser@{ "type" : "boundary" }
-    participant s as server@{ "type" : "control" }
+    participant b as <<boundary>><br>browser
+    participant s as <<control>><br>server
 
     b->>s: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     Note left of b: submits new data to b
