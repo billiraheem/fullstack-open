@@ -3,30 +3,30 @@ sequenceDiagram
     participant browser@{ "type" : "boundary" }
     participant server@{ "type" : "control" }
 
-    broswer->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    Note left of broswer: submits new data to broswer
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    Note left of browser: submits new data to browser
     activate server
     Note right of server: processes and accepts new data, then triggers page reload
-    server-->>broswer: new GET request to /notes
+    server-->>browser: new GET request to /notes
     deactivate server
 
-    broswer->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
-    server-->>broswer: HTML document
+    server-->>browser: HTML document
     deactivate server
 
-    broswer->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
-    server-->>broswer: the CSS file
+    server-->>browser: the CSS file
     deactivate server
 
-    broswer->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate server
-    server-->>broswer: the JavaScript file
+    server-->>browser: the JavaScript file
     deactivate server
 
-    broswer->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>broswer: the JSON file
+    server-->>browser: the JSON file
     deactivate server
 ```
